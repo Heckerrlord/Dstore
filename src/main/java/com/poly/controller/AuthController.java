@@ -48,11 +48,13 @@ public class AuthController {
 
 	@RequestMapping("/auth/login/form")
 	public String logInForm(Model model, @ModelAttribute("account") Account account) {
+		System.out.println("dangnhap");
 		return "auth/login";
 	}
 
 	@RequestMapping("/auth/login/success")
 	public String logInSuccess(Model model, @ModelAttribute("account") Account account) {
+
 		model.addAttribute("message", "Logged in successfully");
 		return "redirect:/index";
 	}
